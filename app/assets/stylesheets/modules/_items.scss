@@ -8,14 +8,14 @@
 */
 
 /*bodyの形成*/
-body{
+body {
     zoom: 1;
 }
 
 /*ヘッダーの形成*/
 .Header {
-    padding: 0 60px;
-  .MainHeader {  
+  padding: 0 60px;
+  &__main {  
     max-width: 1040px;
     width: 100%;
     min-height: 82px;
@@ -30,16 +30,16 @@ body{
         margin-right: 30px;
         border-radius: 4px;
       }
-      &__top__title{
+      &__title {
         position: relative;
         .title {
       
         }
       }
-      &__top__search{
+      &__search {
       }
     }
-  } 
+  
   
   /*  -#= form_for @form, url: search_index_path,method: :get,html: {class: "Main__top__search__form"} do |f|
       -#.Form__top__contents
@@ -47,40 +47,39 @@ body{
         -#= f.submit '検索', class: 'Form__submit'
   */
       
-  
-  .SubHeader{
-    font-size: 14px;
-    display: flex;
-    margin-bottom: 10px;
-    .SubHeader__content__list{
-      position: relative;
+    &__sub {
+      font-size: 14px;
       display: flex;
-      line-height: 38px;
-      .SubHeader__content__list__category{
-        text-decoration: none;
-        padding: 0;
-      }   
-      .SubHeader__content__list__brand{
+      margin-bottom: 10px;
+      &__top {
+        position: relative;
         display: flex;
         line-height: 38px;
-        padding: 0 0 0 16px;
-      }
-    }       
-    .SubHeader__list__content{
-      margin-left: auto;
-      display: flex;
-      &__list__content__login{
-        line-height: 38px;
-        padding: 0 0 0 16px;
-      } 
-      .SubHeader__list__content__new{
-        line-height: 38px;
-        padding: 0 0 0 16px;
-      }
-    }  
+        &__category {
+          text-decoration: none;
+          padding: 0;
+        }   
+        &__brand {
+          display: flex;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+        }
+      }       
+      &__content {
+        margin-left: auto;
+        display: flex;
+        &__login {
+          line-height: 38px;
+          padding: 0 0 0 16px;
+        } 
+        &__new {
+          line-height: 38px;
+          padding: 0 0 0 16px;
+        }
+      }  
+    }
   }
 }
-
 
 /*メインの形成*/
 .Main{
