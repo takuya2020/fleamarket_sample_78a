@@ -6,10 +6,16 @@
 }
 
 */
+
+/*bodyの形成*/
+body{
+    zoom: 1;
+}
+
+/*ヘッダーの形成*/
 .Header {
     padding: 0 60px;
-
-.MainHeader {  
+  .MainHeader {  
     max-width: 1040px;
     width: 100%;
     min-height: 82px;
@@ -19,76 +25,68 @@
       position: relative;
       display: flex;
       align-items: center;
-        .icon {
-            padding-bottom: 10px;
-            margin-right: 30px;
-            border-radius: 4px;
+      .icon {
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+      }
+      &__top__title{
+        position: relative;
+        .title {
+      
         }
+      }
+      &__top__search{
+      }
     }
-
-
-.MainHeader__top__title{
-    position: relative;
-
-}
-  %h1.title {
-
+  } 
+  
+  /*  -#= form_for @form, url: search_index_path,method: :get,html: {class: "Main__top__search__form"} do |f|
+      -#.Form__top__contents
+        -#= f.text_field :keyword,{placeholder: "何をお探しですか？", class: 'Form__top__search__input'}
+        -#= f.submit '検索', class: 'Form__submit'
+  */
+      
+  
+  .SubHeader{
+    font-size: 14px;
+    display: flex;
+    margin-bottom: 10px;
+    .SubHeader__content__list{
+      position: relative;
+      display: flex;
+      line-height: 38px;
+      .SubHeader__content__list__category{
+        text-decoration: none;
+        padding: 0;
+      }   
+      .SubHeader__content__list__brand{
+        display: flex;
+        line-height: 38px;
+        padding: 0 0 0 16px;
+      }
+    }       
+    .SubHeader__list__content{
+      margin-left: auto;
+      display: flex;
+      &__list__content__login{
+        line-height: 38px;
+        padding: 0 0 0 16px;
+      } 
+      .SubHeader__list__content__new{
+        line-height: 38px;
+        padding: 0 0 0 16px;
+      }
+    }  
   }
-.MainHeader__top__search{
-
 }
 
 
-/*  -#= form_for @form, url: search_index_path,method: :get,html: {class: "Main__top__search__form"} do |f|
-    -#.Form__top__contents
-      -#= f.text_field :keyword,{placeholder: "何をお探しですか？", class: 'Form__top__search__input'}
-      -#= f.submit '検索', class: 'Form__submit'
-*/
-    
-
- .SubHeader{
-     font-size: 14px;
-     display: flex;
-     margin-bottom: 10px;
- }
- 
-.SubHeader__content__list{
-    position: relative;
-    display: flex;
-    line-height: 38px;
-}
-.SubHeader__content__list__category{
-    text-decoration: none;
-    padding: 0;
-}
-       
-.SUbHeader__content__list__brand{
-    display: flex;
-    line-height: 38px;
-    padding: 0 0 0 16px;
-}
-         
-.SubHeader__list__content{
-    margin-left: auto;
-    display: flex;
-}
-.SubHeader__list__content__login{
-   line-height: 38px;
-   padding: 0 0 0 16px;
-}
-         
-.SubHeader__list__content__new{
-   line-height: 38px;
-   padding: 0 0 0 16px;
-}  
-}
-}
+/*メインの形成*/
 .Main{
-
 }
 .Main__top{
   background-color: gray;
-  width: 100%;
   height: 560px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -179,8 +177,8 @@
   align-items: center;
 }
 
-
 .Main__subIitle{
+  background-color: gray;
   background-position: bottom right;
   height: 400px;
   background-size: cover;
@@ -220,7 +218,7 @@
 
 .Main__keyFeatures{
   padding: 60px 100px;
-  background-color: blue;
+  background-color: greenyellow;
 }
 .Main__keyFeatures__content{
   font-size:27px;
@@ -263,10 +261,9 @@
 }
 
 .Main__pickUp{
-  padding: 80px 0 0;
+  padding: 80px 0 80px 0;
   background-color: #f8f8f8;
-  height: 100%;
-
+  height: 40%
 }
 .Main__pickUp__heads{
   text-align: center;
@@ -311,61 +308,107 @@
   margin: 0;
   z-index: auto;
 }
-
-.Main__pick{
-
+.Main__picUp__list__body{
+  background-color: white;
+  color: #333;
+  padding: 16px;  
 }
-.Main__pick__heads{
-
+.name{
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
 }
-.Main__pick__box{
-
+.details{
+    font-size: 16px;
 }
-.Main__pick__head{
-
+.tax-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.Main__pick__head__box{
-
+.likeIcon{
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
 }
-.Main__pick__head__box__title{
-
+.tax-included{
+    font-size: 10px;
+    text-align: left;
 }
-.Main__pick__lists{
 
+.AppBanner{
+    padding: 100px 40px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
 }
-.Main__pick__list{
+.Inner{
+    color: #333;
+    text-align: center;
+}
+.Inner__title{
+    text-shadow: 0 0 5px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+.Inner__text{
+    font-size: 35px;
+    text-shadow: 0 0 5px;
+}
+.Inner__icon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+}
+.Inner__icon__link{
+    margin-right: 10px;
+}
 
-}
-.Main__pick__list__img{
 
+/*フッターの形成*/
+.Footer{
+    padding: 60px 0;
+    color: #fff;
+    background-color: #272727;
+    text-align: center; 
 }
-.Main__pick__list__img__text{
-
+.Footer__contents{
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
 }
-.Main__pick__list{
-
+.Footer__content{
+    display: flex;
+    flex-direction: column;
+    width: calc( 1/3 * 100%);
+    margin: 0 2% 0 0;
 }
-.Main__pick__list__img{
-
+.Footer__content__head{
+    margin: 0 0 20px;
+    font-size: 16px;
+    font-weight: bold;
 }
-.Main__pick__list__img__text{
-
+.Footer__content__lists{
+    list-style: none;
 }
-.Main__pick__list{
-
+.Footer__content__list__text{
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 32px;
 }
-.Main__pick__list__img{
-
+.Footer__logo{
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
 }
-.Main__pick__list__img__text{
-
+.Footer__logo__text{
+    font-size: 8px;
 }
-.Main__pick__list{
-
+.Footer__logo__logo{
+    font-size: 14px;
 }
-.Main__pick__list__img{
-
-}
-.Main__pick__list__img__text{
-
-}
+  
