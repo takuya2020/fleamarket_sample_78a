@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   #  before_action :set_item_name, except: [:new, :edit]
     
   def index
@@ -12,3 +13,6 @@ class ItemsController < ApplicationController
     end
   end
 end
+
+
+
