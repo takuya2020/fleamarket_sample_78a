@@ -61,15 +61,7 @@ body {
           }
         }
       }
-    }
-  
-  
-  /*  -#= form_for @form, url: search_index_path,method: :get,html: {class: "Main__top__search__form"} do |f|
-      -#.Form__top__contents
-        -#= f.text_field :keyword,{placeholder: "何をお探しですか？", class: 'Form__top__search__input'}
-        -#= f.submit '検索', class: 'Form__submit'
-  */
-      
+    }    
     &__sub {
       font-size: 14px;
       display: flex;
@@ -139,7 +131,6 @@ body {
         margin: 24px 0 0 0;
         &__list{
           margin-right: 10px;
-          width: 180px;
         }
       }
     }
@@ -270,7 +261,7 @@ body {
         }
       }
       &__list{
-        width: 780px;
+        width: 0px;
         margin: 26px auto;
         display: flex;
         justify-content: space-around; 
@@ -359,7 +350,7 @@ body {
       display: flex;
       justify-content: center;
       margin: 20px auto 0;
-      &__link{
+      &__img{
        margin-right: 10px;
       }
     }
