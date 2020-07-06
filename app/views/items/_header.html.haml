@@ -2,7 +2,8 @@
   .Header__main
     .Header__main__top
       %h1.icon
-        %a
+        = link_to root_path,class: "icon__img" do
+          a
       .Header__main__top__title
         %h1.title FURIMA
       .Header__main__top__search
