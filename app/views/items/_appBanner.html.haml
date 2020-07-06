@@ -1,8 +1,11 @@
 %aside.Appbanner
-  .Inner
-    %h2.Inner__title
-    %p.Inner__text
-    .Inner__icon
-      %a.Inner__icon__link
-    .Inner__icon
-      %a.Inner__icon__link
+  .Appbanner__inner
+    %h2.Appbanner__inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.Appbanner__inner__text
+      今すぐ無料ダウンロード！
+    .Appbanner__inner__icon
+      = link_to root_path,class: "Appbanner__inner__icon__img" do
+        App Store
+      = link_to root_path,class: "Appbanner__inner__icon__img" do
+        Google Play
