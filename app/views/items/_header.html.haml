@@ -16,11 +16,21 @@
           カテゴリー
         %li.Header__main__sub__top__brand
           ブランド
-      %ul.Header__main__sub__content
-        %li.Header__main__sub__top__content__login
-          ログイン
-        %li.Header__main__sub__top__content__new
-          新規登録
+      - if user_signed_in?
+        %ul.Header__main__sub__content
+          %li.Header__main__sub__top__content__new
+            = link_to destroy_user_session_path, method: :delete do
+              ログアウト
+          %li.Header__main__sub__top__content__login
+            = current_user.nickname
+      - else
+        %ul.Header__main__sub__content
+          %li.Header__main__sub__top__content__login
+            = link_to new_user_session_path do
+              ログイン
+          %li.Header__main__sub__top__content__new
+            = link_to new_user_registration_path do
+              新規会員登録
             
   
       

@@ -1,0 +1,26 @@
+%h2.Signup 本人確認情報
+= form_for @profile do |f|
+  = render "devise/shared/error_messages", resource: @profile
+  .Signup__field
+    = f.label 'お名前(全角)'
+    %br/
+    = f.text_field :family_name, placeholder: '例）田中'
+    = f.text_field :personal_name, placeholder: 'フリマ'
+  .Signup__field
+    = f.label 'ふりがな(全角)'
+    %br/
+    = f.text_field :family_name_kana, placeholder: '例）たなか'
+    = f.text_field :personal_name_kana, placeholder: 'ふりま'
+  .Signup__field
+    = f.label '生年月日'
+    %br/
+    = f.text_field :birthyear, placeholder: '年（西暦）'
+    = f.text_field :birthmonth, placeholder: '月'
+    = f.text_field :birthday, placeholder: '日'
+  .actions
+    = f.submit "次へ"
+= render "devise/shared/links"
+
+
+
+ 
