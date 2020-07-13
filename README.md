@@ -119,12 +119,10 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_id|references|null: false, foreign_key: ture|
 |name|string|null: false|
 
 
 ### Association
-- belongs_to :category
 - has_many :items
 
 ## ordersテーブル
