@@ -1,0 +1,119 @@
+.header
+  %h1.header__logo
+    = image_tag 'logo.png', alt: 'FURIMA logo', class: 'image__logo'
+
+.main
+  .inputform
+    .inputform__header
+      .inputform__header__title
+        出品画像
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__title
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = label :image, "画像をアップロード", for: "image__input__btn__file", class: "image__input__btn"
+          = form.file_field :image, id: "image__input__btn__file"
+          
+  .inputform__product
+    .inputform__header
+      .inputform__header__title
+        商品名
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.text_field :text, class: "inputform__body__upload__text"
+    .inputform__header
+      .inputform__header__title
+        商品の説明
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.text_area :text, size: "55x6", maxlength: "1000", class: "inputform__body__upload__text"
+            
+  .inputform__category
+    .inputform__header
+      .inputform__header__title
+        カテゴリー
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :category, [["選択して下さい", 0],["レディース", 1],["メンズ", 2],["ベビー、キッズ", 3],["インテリア", 4]], class: "inputform__body__upload__select"
+    .inputform__header
+      .inputform__header__title
+        ブランド
+      .inputform__header__nini
+        任意
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path  do |form|
+          = form.text_field :text, class: "inputform__body__upload__text"
+    .inputform__header
+      .inputform__header__title
+        商品の状態
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :condition, [["選択して下さい", 0],["新品、未使用", 1],["目立った汚れ傷なし", 2],["傷や汚れ有り", 3],["全体的に状態が悪い", 4]], class: "inputform__body__upload__select"
+        
+  .inputform__deliver
+    .inputform__header
+      .inputform__header__title
+        配送方法
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :text, [["選択して下さい", 0], ["日本郵政", 1], ["ヤマト運輸", 2], ["佐川急便", 3]], class: "inputform__body__upload__select"
+    .inputform__header
+      .inputform__header__title
+        発送元の地域
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :text, [["選択して下さい", 0],["北海道", 1],["青森県", 2],["岩手県", 3],["宮城県", 4],["秋田県", 5],["山形県", 6],["福島県", 7],["茨城県", 8],["栃木県", 9],["群馬県", 10],["埼玉県", 11],["千葉県", 12],["東京都", 13],["神奈川県", 14],["山梨県", 15],["新潟県", 16],["富山県", 17],["石川県", 18],["福井県", 19],["長野県", 20],["岐阜県", 21],["静岡県", 22],["愛知県", 23],["三重県", 24],["滋賀県", 25],["京都府", 26],["大阪府", 27],["兵庫県", 28],["奈良県", 29],["和歌山県", 30],["鳥取県", 31],["島根県", 32],["広島県", 33],["山口県", 34],["岡山県", 35],["香川県", 36],["徳島県", 37],["愛媛県", 38],["高知県", 39],["福岡県", 40],["佐賀県", 41],["長崎県", 42],["大分県", 43],["熊本県", 44],["宮崎県", 45],["鹿児島県", 46],["沖縄県", 47]], class: "inputform__body__upload__select"
+    .inputform__header
+      .inputform__header__title
+        発送までの日数
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :text, [["選択して下さい", 0], ["1日~2日で発送", 1], ["2日~3日で発送", 2], ["4日~7日で発送", 3]], class: "inputform__body__upload__select"
+
+  .inputform
+    .inputform__header
+      .inputform__header__title
+        販売価格
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          ¥
+          = form.number_field :text, class: "inputform__body__upload__number"
+
+  .inputform  
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.submit :text, value: "出品する", id: "inputform__body__upload__submit"
+
+.footer
+  .footer__logo
+    = image_tag 'logo-white.png', alt: "FURIMA logo", class: "image__logo__white", size: "200x100"
+  .footer__inc
+    ©️FURIMA.inc
