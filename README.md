@@ -60,10 +60,10 @@ Things you may want to cover:
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |zipcode|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id(active_hash)|integer|null: false|
 |city|string|null: false|
-|address|string|null: false|
-|apartment|string|null: false|
+|block|string|null: false|
+|apartment|string|
 
 ### Association
 - belongs_to :user, optional: true
