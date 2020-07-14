@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color: #f8f8f8;
 .header {
-  height: calc(200vh - 180vh);
+  height: calc(170vh - 150vh);
   width: 100vw;
   background-color: rgb(0, 255, 242);
   &__logo {
@@ -13,7 +13,7 @@ $color: #f8f8f8;
 
 .main {
   background-color: $color;
-  height: calc(200vh - 20vh);
+  height: calc(170vh - 20vh);
   .inputform {
     height: 200px;
     width: 600px;
