@@ -30,11 +30,11 @@ Things you may want to cover:
 |encrypted_password|string|null: false, default: ""|
 
 ### Association
-- has_one :profile
-- has_one :address
-- has_many :items
+- has_one :profile dependent: :destroy
+- has_one :address dependent: :destroy
+- has_many :items dependent: :destroy
 - has_many :wallets dependent: :destroy
-- has_many :orders dependent: :destroy
+- has_many :item_purchases
 
 ## profilesテーブル
 |Column|Type|Options|
@@ -93,7 +93,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :category
 - has_many :item_images dependent: :destroy
-- has_one :item_purchase
+- has_one :item_purchase 
 
 ## item_imagesテーブル
 |Column|Type|Options|
@@ -112,7 +112,7 @@ Things you may want to cover:
 |ancestry|string|foreign_key: true, null: false|
 
 ### Association
-- has_many :items
+- has_many :items 
 
 ## item_purchasesテーブル
 |Column|Type|Options|
