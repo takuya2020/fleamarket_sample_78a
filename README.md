@@ -87,13 +87,13 @@ Things you may want to cover:
 |price|integer|null: false|
 |trading_status|integer|null: false|
 |completed_at|datetime|
+|brand|string|
 
 ### Association
 - belongs_to :user
 - belongs_to :category
-- belongs_to :brand
 - has_many :item_images dependent: :destroy
-- has_one :order
+- has_one :item_purchase
 
 ## item_imagesテーブル
 |Column|Type|Options|
@@ -109,21 +109,12 @@ Things you may want to cover:
 |------|----|-------|
 |path|text|null: false|
 |name|string|null: false|
-|ancestry|string|
-
-### Association
-- has_many :brands
-- has_many :items
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
+|ancestry|string|foreign_key: true, null: false|
 
 ### Association
 - has_many :items
 
-## ordersテーブル
+## item_purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: ture|
