@@ -1,8 +1,7 @@
-.header
-  %h1.header__logo
-    = image_tag 'logo.png', alt: 'FURIMA logo', class: 'image__logo'
+%body
+  = render 'items/header'
 
-.main
+.main__form
   .inputform
     .inputform__header
       .inputform__header__title
@@ -83,8 +82,5 @@
         = form_with url: root_path do |form|
           = form.submit :text, value: "出品する", id: "inputform__body__upload__submit"
 
-.footer
-  .footer__logo
-    = image_tag 'logo-white.png', alt: "FURIMA logo", class: "image__logo__white", size: "200x100"
-  .footer__inc
-    ©️FURIMA.inc
+%body
+  = render 'items/footer'
