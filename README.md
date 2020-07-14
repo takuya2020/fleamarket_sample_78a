@@ -121,7 +121,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 
-
 ### Association
 - has_many :items
 
@@ -130,7 +129,6 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|references|null: false, foreign_key: ture|
 |item_id|references|null: false, foreign_key: ture|
-
 
 ### Association
 - belongs_to :user
