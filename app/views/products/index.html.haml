@@ -25,7 +25,7 @@
     .inputform__body
       .inputform__body__upload
         = form_with url: root_path do |form|
-          = form.text_field :text, class: "inputform__body__upload__text"
+          = form.text_field :name, class: "inputform__body__upload__text"
     .inputform__header
       .inputform__header__title
         商品の説明
@@ -45,7 +45,7 @@
     .inputform__body
       .inputform__body__upload
         = form_with url: root_path do |form|
-          = form.select :category, [["選択して下さい", 0],["レディース", 1],["メンズ", 2],["ベビー、キッズ", 3],["インテリア", 4]], class: "inputform__body__upload__select"
+          = form.select :category_id, [["選択して下さい", 0],["レディース", 1],["メンズ", 2],["ベビー、キッズ", 3],["インテリア", 4]], class: "inputform__body__upload__select"
     .inputform__header
       .inputform__header__title
         ブランド
@@ -54,7 +54,7 @@
     .inputform__body
       .inputform__body__upload
         = form_with url: root_path  do |form|
-          = form.text_field :text, class: "inputform__body__upload__text"
+          = form.text_field :brand_id, class: "inputform__body__upload__text"
     .inputform__header
       .inputform__header__title
         商品の状態
@@ -104,7 +104,7 @@
       .inputform__body__upload
         = form_with url: root_path do |form|
           ¥
-          = form.number_field :text, class: "inputform__body__upload__number"
+          = form.number_field :price, class: "inputform__body__upload__number"
 
   .inputform  
     .inputform__body
