@@ -25,6 +25,16 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+
+|name|string|null: false, add_index: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+
+### Association
+- has_many :groups_users
+- has_many :groups, through: groups_users
+- has_many :messages
+
 |nickname|string|null: false|
 |email|string|null: false, default: ""|
 |encrypted_password|string|null: false, default: ""|
@@ -123,5 +133,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
+
 
 

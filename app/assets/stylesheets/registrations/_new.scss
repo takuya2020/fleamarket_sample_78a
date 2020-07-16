@@ -1,0 +1,70 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+.box {
+    width: 30%;
+    height: 450px;
+    padding: 0 0 0 50%;
+    margin: 60px auto 0;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+}
+
+.Signup {
+    display: block;
+    background: #f5f5f5;
+    &__title{
+        font-size: 22px;
+        font-weight: bold;
+        padding: 32px;
+        line-height: 33px;
+        text-align: center;
+    }
+    &__head{
+        width: 700px;
+        margin: 0 auto;
+        background: #f5f5f5;
+        &__form {
+            padding: 24px 16px 136px;
+            background: #fff;
+            border-top: 1px solid rgb(245, 245,245);
+            &__field{
+                margin: 0;
+                label{
+                    font-weight: 600;
+                    font-size: 13px;
+                    &__require {
+                        background: #ea352d;
+                        margin: 0 0 0 8px;
+                        padding: 2px 4px;
+                        border-radius: 2px;
+                        color: #fff;
+                        font-size: 12px;
+                        right: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.next-btn{
+    margin: 24px 0 0;
+    background: #ea352d;
+    border: 1px splid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100px;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor:pointer;
+    text-align: center;
+}
+
+
+
+
