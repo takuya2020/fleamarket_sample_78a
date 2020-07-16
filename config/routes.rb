@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+    get 'confirm', to: 'users/registrations#confirm'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html 
     root to: 'items#index'

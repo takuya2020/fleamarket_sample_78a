@@ -1,38 +1,47 @@
-%h2.Address
-  商品送付先住所情報
-.Address__form
-  = form_for @address do |f|
-    = render "devise/shared/error_messages", resource: @address
-    .Address__form__field
-      = f.label 'お名前'
-      %br/
-      = f.text_field :first_name
-      = f.text_field :last_name
-    .Address__form__field
-      = f.label 'ふりがな'
-      %br/
-      = f.text_field :first_name_kana
-      = f.text_field :last_name_kana
-    .Address__form__field
-      = f.label '郵便番号'
-      %br/
-      = f.text_field :zipcode
-    .Address__form__field
-      = f.label '都道府県'
-      %br/
-      = f.text_field :prefecture
-    .Address__form__field
-      = f.label '市町村'
-      %br/
-      = f.text_field :city
-    .Address__form__field
-      = f.label '番地'
-      %br/
-      = f.text_field :address
-    .Address__form__field
-      = f.label 'アパート名（号室）'
-      %br/
-      = f.text_field :apartment
-    .actions
-      = f.submit "次へ"
-= render "devise/shared/links"
+= render "items/header"
+.Signup
+  .Signup__main
+    %h2.Signup__title 商品送付先住所情報
+    .Signup__head
+      .Signup__head__form
+        = form_for @address do |f|
+          = render "devise/shared/error_messages", resource: @address
+          .Signup__head__form__field
+            = f.label 'お名前'
+            %span.Signup__head__form__field__require 必須
+            %br/
+            = f.text_field :first_name, placeholder: '例）田中'
+            = f.text_field :last_name, placeholder: '例）フリマ'
+          .Signup__head__form__field
+            = f.label 'ふりがな'
+            %span.Signup__head__form__field__require  必須
+            %br/
+            = f.text_field :first_name_kana, placeholder: '例）たなか'
+            = f.text_field :last_name_kana, placeholder: '例）ふりま'
+          .Signup__head__form__field
+            = f.label '郵便番号'
+            %span.Signup__head__form__field__require  必須
+            %br/
+            = f.text_field :zipcode, placeholder: '例）000-0000'
+          .Signup__head__form__field
+            = f.label '都道府県'
+            %span.Signup__head__form__field__require  必須
+            %br/
+            = f.text_field :prefecture, placeholder: '例）東京'
+          .Signup__head__form__field
+            = f.label '市区町村'
+            %span.Signup__head__form__field__require  必須
+            %br/
+            = f.text_field :city, placeholder: '例）港区'
+          .Signup__head__form__field
+            = f.label '番地'
+            %span.Signup__head__form__field__require  必須
+            %br/
+            = f.text_field :address, placeholder: '例）１ー１ー1'
+          .Signup__head__form__field
+            = f.label 'アパート名（号室）'
+            %br/
+            = f.text_field :apartment, placeholder: '例）ひまわり101号室'
+          .Signup__head__form__actions
+            = f.submit "次へ", class: 'next-btn'
+= render "items/footer"
