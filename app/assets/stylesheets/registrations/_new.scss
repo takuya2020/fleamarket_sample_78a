@@ -36,11 +36,19 @@
                 label{
                     font-weight: 600;
                     font-size: 13px;
+                    &__require {
+                        background: #ea352d;
+                        margin: 0 0 0 8px;
+                        padding: 2px 4px;
+                        border-radius: 2px;
+                        color: #fff;
+                        font-size: 12px;
+                        right: 12px;
+                    }
                 }
             }
         }
     }
-
 }
 
 .next-btn{
