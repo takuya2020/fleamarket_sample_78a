@@ -10,20 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_09_032253) do
+ActiveRecord::Schema.define(version: 2020_07_16_020514) do
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "category", null: false
-    t.string "deliver_leadteme", null: false
-    t.string "deliver_person", null: false
-    t.string "deliver_way", null: false
-    t.string "fresh_status", null: false
-    t.string "form_area", null: false
+  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "text", null: false
+    t.integer "condition", null: false
     t.integer "price", null: false
-    t.string "sell_status", null: false
-    t.integer "size_id", null: false
-    t.string "text", null: false
-    t.string "title", null: false
+    t.integer "rading_status", null: false
+    t.datetime "completed_at"
+    t.string "brand"
+    t.integer "shipping_charges", null: false
+    t.integer "days_until_delivery", null: false
+    t.integer "shipping_area", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
