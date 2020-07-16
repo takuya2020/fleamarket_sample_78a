@@ -3,7 +3,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :redirect_already_sign_in
 
 
   def new
@@ -19,10 +18,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    # @profile = @user.build_profile
-    session["profile_data"] = @user.build_profile
-    # binding.pry
-    respond_with resource, location: after_sign_up_path_for(resource)
+    @profile = @user.build_profile
+    render :new_profile
   end
 
   def create_profile
@@ -53,10 +50,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     sign_in(:user, @user)
   end
-
-  def confirm
-    @profile = Profile.new(session["profile_data"])
-  end
     
 
 
@@ -69,15 +62,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_params
     params.require(:address).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :zipcode, :prefecture, :city, :address, :apartment)
   end
-
-  def after_sign_up_path_for(resource)
-    confirm_path
-  end
-
-  def redirect_already_sign_in
-    redirect_to root_path if user_signed_in?
-  end
-
 
   # GET /resource/sign_up
   # def new
