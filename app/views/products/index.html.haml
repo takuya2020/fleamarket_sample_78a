@@ -1,0 +1,86 @@
+%body
+  = render 'items/header'
+
+.main__form
+  .inputform
+    .inputform__header
+      .inputform__header__title
+        出品画像
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__title
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = label :image, "画像をアップロード", for: "image__input__btn__file", class: "image__input__btn"
+          = form.file_field :image, id: "image__input__btn__file"
+          
+  .inputform__product
+    .inputform__header
+      .inputform__header__title
+        商品名
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.text_field :name, class: "inputform__body__upload__text"
+    .inputform__header
+      .inputform__header__title
+        商品の説明
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.text_area :text, size: "55x6", maxlength: "1000", class: "inputform__body__upload__text"
+            
+  .inputform__category
+    .inputform__header
+      .inputform__header__title
+        カテゴリー
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :category_id, [["選択して下さい", 0],["レディース", 1],["メンズ", 2],["ベビー、キッズ", 3],["インテリア", 4]], class: "inputform__body__upload__select"
+    .inputform__header
+      .inputform__header__title
+        ブランド
+      .inputform__header__nini
+        任意
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path  do |form|
+          = form.text_field :brand, class: "inputform__body__upload__text"
+    .inputform__header
+      .inputform__header__title
+        商品の状態
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.select :condition, [["選択して下さい", 0],["新品、未使用", 1],["目立った汚れ傷なし", 2],["傷や汚れ有り", 3],["全体的に状態が悪い", 4]], class: "inputform__body__upload__select"
+        
+  .inputform
+    .inputform__header
+      .inputform__header__title
+        販売価格
+      .inputform__header__hissu
+        必須
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          ¥
+          = form.number_field :price, class: "inputform__body__upload__number"
+
+  .inputform  
+    .inputform__body
+      .inputform__body__upload
+        = form_with url: root_path do |form|
+          = form.submit :text, value: "出品する", id: "inputform__body__upload__submit"
+
+%body
+  = render 'items/footer'
