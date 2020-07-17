@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def create
     Item.create(item_params)
+    redirect_to root_path
   end
 
   def search
@@ -22,6 +23,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:nane, :text, :condition, :price, :rading_status, :conpleted_at, :brand, :shipping_charges, :days_until_delivery, :shipping_are)
+    params.require(:item).permit(:name, :text, :condition, :price, :rading_status, :conpleted_at, :brand, :shipping_charges, :days_until_delivery, :shipping_area, :category_id)
   end
 end
