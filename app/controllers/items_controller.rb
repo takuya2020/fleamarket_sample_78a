@@ -1,16 +1,30 @@
 class ItemsController < ApplicationController
-    
+  before_action :set_item, except: [:index, :new, :create]
+
   def index
-    @items = Item.all
+    @items = Item.includes(:item_image).order('created_at DESC')
   end
 
   def new
     @item = Item.new
+    @item.item_images.new
   end
 
   def create
-    @items = Item.create(item_params)
-    @items.user = current_user
+    @item = Item.new(item_params)
+    if item.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def search
@@ -23,6 +37,11 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :text, :condition, :price, :rading_status, :completed_at, :brand, :shipping_charges, :days_until_delivery, :shipping_area, :category_id, item_images: [:item_id, :image_url])
+    params.require(:item).permit(:name, :text, :condition, :price, :rading_status, :completed_at, :brand, :shipping_charges, :days_until_delivery, :shipping_area, :category_id, images_attributes: [:image_url, :_destroy, :id])
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
