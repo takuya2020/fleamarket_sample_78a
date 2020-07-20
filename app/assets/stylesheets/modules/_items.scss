@@ -59,7 +59,7 @@ body {
             width: 30px;
             padding: 5px 0 0 0;
             margin: 0 0 0 2px;
-            background-image:url(/assets/icon-search.png);
+            background-image: image-url('icon-search.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top center;
@@ -145,7 +145,7 @@ body {
 /*メインの形成*/
 .Main{
   &__top{
-    background-image:url(/assets/bg-mainVisual-pict_pc.jpg);
+    background-image: image-url('bg-mainVisual-pict_pc');
     height: 560px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -208,7 +208,7 @@ body {
           flex-direction: column;
           align-items: center;
           &__number {
-            background-image:url(/assets/pict-reason-01.jpg);
+            background-image: image-url('pict-reason-01');
             width: 300px;
             height: 300px;
             background-size: cover;
@@ -216,7 +216,7 @@ body {
             background-position: top center;
           }
           &__use {
-            background-image:url(/assets/pict-reason-02.jpg);
+            background-image: image-url( 'pict-reason-02');
             width: 300px;
             height: 300px;
             background-size: cover;
@@ -224,7 +224,7 @@ body {
             background-position: top center;
           }
           &__buy {
-            background-image:url(/assets/pict-reason-03.jpg);
+            background-image: image-url( 'pict-reason-03');
             width: 300px;
             height: 300px;
             background-size: cover;
@@ -236,7 +236,7 @@ body {
     }
   }
   &__subTitle{
-    background-image:url(/assets/bg-topMiddleDl-pict.jpg);
+    background-image: image-url('bg-topMiddleDl-pict');
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -294,7 +294,7 @@ body {
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
-          background-image:url(/assets/icon-01.png);
+          background-image: image-url('icon-01');
           width: 200px;
           height: 400px;
           background-size: cover;
@@ -305,7 +305,7 @@ body {
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
-          background-image:url(/assets/icon-02.png);
+          background-image: image-url('icon-02');
           width: 200px;
           height: 400px;
           background-size: cover;
@@ -316,7 +316,7 @@ body {
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
-          background-image:url(/assets/icon-03.png);
+          background-image: image-url('icon-03');
           width: 200px;
           height: 400px;
           background-size: cover;
@@ -428,7 +428,7 @@ body {
 /*バーナー*/
 .AppBanner{
   padding: 100px 40px;
-  background-image:url(/assets/bg-appBanner-pict.jpg);
+  background-image: image-url('bg-appBanner-pict');
   height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
