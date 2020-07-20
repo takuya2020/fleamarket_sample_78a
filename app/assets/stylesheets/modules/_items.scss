@@ -30,6 +30,7 @@ body {
         padding-bottom: 10px;
         margin-right: 30px;
         border-radius: 4px;
+        
       }
       &__title {
         position: relative;
@@ -52,13 +53,23 @@ body {
             height: 36px;
             padding: 0 0 0 5px;
           }
-          &__btn {
-            width: 36px;
-            border: 0;
-            cursor: pointer;
-            font-size: 8px;
+          &__img{
             background-color: #3CCACE;
-            
+            height: 30px;
+            width: 30px;
+            padding: 5px 0 0 0;
+            margin: 0 0 0 2px;
+            background-image:url(/assets/icon-search.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+            &__btn {
+              border: 0;
+              height: 30px;
+              width: 30px;
+              cursor: pointer;
+              opacity:0;
+            } 
           }
         }
       }
@@ -134,7 +145,7 @@ body {
 /*メインの形成*/
 .Main{
   &__top{
-    background-color: gray;
+    background-image:url(/assets/bg-mainVisual-pict_pc.jpg);
     height: 560px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -172,7 +183,7 @@ body {
   }
   &__choose{
     &__content{
-      background-color: #3CCACE;
+      background-color: #fff;
       padding: 60px 20px;
       &__list{
         text-align: center;
@@ -196,15 +207,40 @@ body {
           display: flex;
           flex-direction: column;
           align-items: center;
+          &__number {
+            background-image:url(/assets/pict-reason-01.jpg);
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+          }
+          &__use {
+            background-image:url(/assets/pict-reason-02.jpg);
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+          }
+          &__buy {
+            background-image:url(/assets/pict-reason-03.jpg);
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+          }
         }
       }
     }
   }
   &__subTitle{
-    background-color: gray;
-    background-position: bottom right;
-    height: 400px;
+    background-image:url(/assets/bg-topMiddleDl-pict.jpg);
+    height: 500px;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
     display: flex;
     align-items: center;
     &__comment{
@@ -233,7 +269,7 @@ body {
   }
   &__keyFeatures{
     padding: 60px 100px;
-    background-color: #3CCACE;
+    background-color: #fff;
     &__content{
       font-size:27px;
       text-align: center;
@@ -258,6 +294,34 @@ body {
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
+          background-image:url(/assets/icon-01.png);
+          width: 200px;
+          height: 400px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &__buy{
+          width: 70%;
+          margin: 0 auto;
+          line-height: 120px;
+          background-image:url(/assets/icon-02.png);
+          width: 200px;
+          height: 400px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &__use{
+          width: 70%;
+          margin: 0 auto;
+          line-height: 120px;
+          background-image:url(/assets/icon-03.png);
+          width: 200px;
+          height: 400px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
         }
         &__subTitle{
           margin: 38px 0 10px;
@@ -364,9 +428,12 @@ body {
 /*バーナー*/
 .AppBanner{
   padding: 100px 40px;
-  position: relative;
+  background-image:url(/assets/bg-appBanner-pict.jpg);
+  height: 300px;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  position: relative;
   &__inner{
     color: #333;
     text-align: center;
