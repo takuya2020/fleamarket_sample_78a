@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_062946) do
+ActiveRecord::Schema.define(version: 2020_07_19_062102) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "path", null: false
@@ -21,11 +21,15 @@ ActiveRecord::Schema.define(version: 2020_07_16_062946) do
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "items_id", null: false
+    t.string "image_url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["items_id"], name: "index_item_images_on_items_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id", null: false
     t.string "name", null: false
     t.text "text", null: false
     t.integer "condition", null: false
@@ -38,11 +42,9 @@ ActiveRecord::Schema.define(version: 2020_07_16_062946) do
     t.integer "shipping_area", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id_id", null: false
-    t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["category_id_id"], name: "index_items_on_category_id_id"
   end
 
+  add_foreign_key "item_images", "items", column: "items_id"
   add_foreign_key "items", "categories"
 end

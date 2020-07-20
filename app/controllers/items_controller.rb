@@ -5,12 +5,12 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @items = Item.new
+    @item = Item.new
   end
 
   def create
-    Item.create(item_params)
-    redirect_to root_path
+    @items = Item.create(item_params)
+    @items.user = current_user
   end
 
   def search
@@ -23,6 +23,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :text, :condition, :price, :rading_status, :conpleted_at, :brand, :shipping_charges, :days_until_delivery, :shipping_area, :category_id)
+    params.require(:item).permit(:name, :text, :condition, :price, :rading_status, :completed_at, :brand, :shipping_charges, :days_until_delivery, :shipping_area, :category_id, item_images: [:item_id, :image_url])
   end
 end

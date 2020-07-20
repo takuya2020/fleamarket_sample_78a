@@ -1,5 +1,5 @@
 class ItemImage < ApplicationRecord
-  belongs_to :item
+  belongs_to :items
 
-  validates :item_id, :item_url, presence: true
+  validates :image_url, presence: true
 end
