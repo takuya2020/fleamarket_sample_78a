@@ -1,12 +1,9 @@
 .Header
   .Header__main
-    = image_tag 'logo.png', alt: 'FURIMA logo', class: 'image__logo'
     .Header__main__top
       %h1.icon
-        = link_to products_path, class: "icon__img" do
-          a
-      .Header__main__top__title
-        %h1.title FURIMA
+        = link_to root_path, class: "icon__img" do
+          = image_tag 'logo.png', alt: 'FURIMA logo', class: 'image__logo'
       .Header__main__top__search
         = form_with url: search_items_path, local: true, method: :get,html: {class: "Header__main__top__search__form"} do |form|
           = form.text_field :keyword, {placeholder: "キーワードから探す", class: "Header__main__top__search__form__input"}
@@ -20,27 +17,18 @@
 
       - if user_signed_in?
         %ul.Header__main__sub__content
-          %li.Header__main__sub__top__content__new
-            = link_to destroy_user_session_path, method: :delete do
-              ログアウト
           %li.Header__main__sub__top__content__login
-            = current_user.nickname
+            = link_to destroy_user_session_path, method: :delete ,class: 'top-btn'do
+              ログアウト
+          %li.Header__main__sub__top__content__new
+            =link_to user_path(current_user.id),class: 'top-btn' do
+              = current_user.nickname  
       - else
         %ul.Header__main__sub__content
           %li.Header__main__sub__top__content__login
-            = link_to new_user_session_path do
+            = link_to new_user_session_path ,class: 'top-btn'do
               ログイン
           %li.Header__main__sub__top__content__new
-            = link_to new_user_registration_path do
+            = link_to new_user_registration_path ,class: 'top-btn'do
               新規会員登録
-            
-  
-      
-      
-
-      %ul.Header__main__sub__content
-        %li.Header__main__sub__top__content__login
-          ログイン
-        %li.Header__main__sub__top__content__new
-          新規登録
 

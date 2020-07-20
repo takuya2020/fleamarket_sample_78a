@@ -1,0 +1,28 @@
+= render 'items/header'
+.User__mypage
+  .Mypage
+    .Mypage__head
+      .Mypage__head__home
+        =link_to root_path,class: 'Mypage-btn' do
+          FURIMA
+      .Mypage__head__than
+        >
+      .Mypage__head__shop
+        = current_user.nickname
+    .Mypage__body
+      .Mypage__body__line
+        .Mypage__body__line__image
+        %ul.Mypage__body__line__deta
+          %li.Mypage__body__line__deta__shop
+            = current_user.nickname + "-shop"
+          %li.Mypage__body__line__deta__name     
+            = current_user.nickname 
+          %li.Mypage__body__line__deta__cade
+            =link_to new_card_path,class: 'btn' do
+              クレジットカード登録
+    .Mypage__footer
+      .Mypage__footer__exhibition
+        =link_to products_path,class: 'btn' do
+          出品する  
+= render 'items/footer'
+= render 'items/a'

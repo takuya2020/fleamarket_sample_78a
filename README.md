@@ -78,11 +78,12 @@ Things you may want to cover:
 ### Association
 - belongs_to :user, optional: true
 
-## walletsテーブル
+## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|money|integer|null: false|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user

@@ -1,0 +1,51 @@
+.Card{
+    height: 70%;
+    width: 100%;
+    display: block;
+    margin: 0 30%;
+    padding: 30px 0 0 0;
+    &__form{
+        height: 300px;
+        &__label{
+            height: 40px;
+            margin: 15px 0 0 0;
+            display: flex;
+            &__text{
+                width: 50px;
+                margin: 5px 0 0 10px;
+            }
+
+        }
+        &__btn{
+
+        }
+        
+    }
+}
+
+.pay-btn{
+    text-decoration:none;
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px #bfbfbf;
+    margin: 10px auto;
+    color: #fff;
+}
+.pay-btn:link{
+    color: #fff;
+}
+.pay-btn:visited {
+    color: #fff;
+}
+    
+.pay-btn:hover {
+    color:#3CCACE;
+}
+    
+.pay-btn:active {
+    color:#33CC00;
+}

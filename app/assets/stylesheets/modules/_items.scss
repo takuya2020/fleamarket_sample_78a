@@ -14,6 +14,7 @@ body {
 
 /*ヘッダーの形成*/
 .Header {
+  border-bottom: 1px solid gray;
   padding: 0 60px;
   &__main {  
     max-width: 1040px;
@@ -65,7 +66,6 @@ body {
     &__sub {
       font-size: 14px;
       display: flex;
-      margin-bottom: 10px;
       &__top {
         position: relative;
         display: flex;
@@ -95,6 +95,41 @@ body {
     }
   }
 }
+.image__logo{
+  width: 140px;
+  margin: 5px 0 0 0;
+}
+.Header__main__sub__top__content__login {
+  margin: 10px 0 0 0;
+  text-decoration: none;
+  color:red;
+}
+.Header__main__sub__top__content__new {
+  margin: 10px 0 0 10px;
+  text-decoration: none;
+  color: red;
+}
+
+.top-btn{
+  text-decoration:none;
+  }
+  
+.top-btn:link {
+  color: black;
+  }
+  
+.top-btn:visited {
+  color: black;
+  }
+  
+.top-btn:hover {
+  color:#3CCACE;
+  text-decoration:underline;
+  }
+  
+.top-btn:active {
+  color:#33CC00;
+  }
 
 /*メインの形成*/
 .Main{
@@ -137,7 +172,7 @@ body {
   }
   &__choose{
     &__content{
-      background-color: greenyellow;
+      background-color: #3CCACE;
       padding: 60px 20px;
       &__list{
         text-align: center;
@@ -198,7 +233,7 @@ body {
   }
   &__keyFeatures{
     padding: 60px 100px;
-    background-color: greenyellow;
+    background-color: #3CCACE;
     &__content{
       font-size:27px;
       text-align: center;
