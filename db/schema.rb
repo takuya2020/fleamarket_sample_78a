@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_07_17_032515) do
-
+ActiveRecord::Schema.define(version: 2020_07_19_062102) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
@@ -34,14 +32,28 @@ ActiveRecord::Schema.define(version: 2020_07_17_032515) do
     t.integer "user_id", null: false
     t.string "customer_id", null: false
     t.string "card_id", null: false
-
-  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "path", null: false
+    t.string "name", null: false
+    t.string "ancestry", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "items_id", null: false
+    t.string "image_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["items_id"], name: "index_item_images_on_items_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id", null: false
     t.string "name", null: false
     t.text "text", null: false
     t.integer "condition", null: false
@@ -54,8 +66,23 @@ ActiveRecord::Schema.define(version: 2020_07_17_032515) do
     t.integer "shipping_area", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category", null: false
+    t.string "deliver_leadteme", null: false
+    t.string "deliver_person", null: false
+    t.string "deliver_way", null: false
+    t.string "fresh_status", null: false
+    t.string "form_area", null: false
+    t.integer "price", null: false
+    t.string "sell_status", null: false
+    t.integer "size_id", null: false
+    t.string "text", null: false
+    t.string "title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,5 +111,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_032515) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "item_images", "items", column: "items_id"
+  add_foreign_key "items", "categories"
   add_foreign_key "profiles", "users"
 end
