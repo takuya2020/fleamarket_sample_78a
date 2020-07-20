@@ -1,0 +1,29 @@
+= render 'items/header'
+.User__mypage
+  .Mypage
+    .Mypage__head
+      .Mypage__head__home
+        =link_to root_path,class: 'Mypage-btn' do
+          ホーム
+      .Mypage__head__home
+        >
+      .Mypage__head__home
+        =link_to user_path(current_user.id),class: 'Mypage-btn' do
+          = current_user.nickname
+      .Mypage__head__home
+        >
+      .Mypage__head__home
+        クレジットカード
+    .Mypage__body
+      登録クレジットカード情報
+      .Mypage__body__text
+        = "**** **** **** " + @default_card_information.last4
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        = exp_month + " / " + exp_year
+        = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+          %input{ type: "hidden", name: "card_id", value: "" }
+          %button.pay-btn 
+            削除する
+= render 'items/footer'
+= render 'items/a'

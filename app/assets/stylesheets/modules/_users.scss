@@ -1,0 +1,124 @@
+.User__mypage{
+    
+    height: 100%;
+}
+
+.Mypage {
+    max-width: 1040px;
+    height: 100%;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 0 24%; 
+    &__head{
+        height: 50px;
+        display: flex;
+        margin: 30px 0 0 0;
+        &__home{
+            font-size: 14px;
+            color: #646166;
+            padding: 0 8px 0 0;
+            text-decoration: none;
+        }
+        &__than{
+            font-size: 14px;
+            color: #646166;    
+        }
+        &__shop{
+            font-size: 14px;
+            color: #646166;
+            padding: 0 8px;
+        }
+    }
+    &__body{
+        height: 200px;
+        &__line{
+            display: flex;
+            border: 1px solid #a2a1a3;
+            &__image{
+                width: 50%;
+                height: 200px;
+            }
+            &__deta{
+                width: 50%;
+                margin: 20px 0 20px 30px;
+                &__shop{
+                    color: #646166;
+                    margin: 20px 0 20px 30px;
+                }
+                &__name{
+                    color: #646166;
+                    font-size: 14px;
+                    margin: 20px 0 20px 30px;
+                }
+                &__cade{
+                    margin: 20px 0 20px 30px;
+                    text-decoration: none;
+                    background: red;
+                    padding: 10px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 5px #bfbfbf;
+                }
+            }
+        }
+    }
+    &__footer{
+        width: 100%;
+        padding: 20px 0 0 0;      
+        text-align: center;
+        &__exhibition{
+            background: red;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px #bfbfbf;
+            margin: 40px auto;
+        }
+    }
+}
+
+.Mypage-btn{
+    text-decoration:none;
+}
+.Mypage-btn:link{
+    color: #646166;
+}
+.Mypage-btn:visited {
+    color: #646166;
+}
+    
+.Mypage-btn:hover {
+    color:#3CCACE;
+    text-decoration:underline;
+}
+    
+.Mypage-btn:active {
+    color:#33CC00;
+}
+
+.btn{
+    text-decoration:none;
+}
+.btn:link{
+    color: #fff;
+}
+.btn:visited {
+    color: #fff;
+}
+    
+.btn:hover {
+    color:#3CCACE;
+    text-decoration:underline;
+}
+    
+.btn:active {
+    color:#33CC00;
+}
+
+
+
