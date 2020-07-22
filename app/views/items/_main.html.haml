@@ -85,7 +85,8 @@
         .Main__pickUp__box__list__img
           = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
-              ■
+              = link_to show_path do
+                ■
             .Main__picUp__box__list__img__text__body
               %h3.Main__name
                 product
