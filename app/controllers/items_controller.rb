@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def search
     if params[:keyword].present?
       @Items = Item.where('item LIKE ?', "%#{params[:keywoed]}%")
