@@ -1,0 +1,21 @@
+
+  #image__box
+    #previews
+      - if @item.persisted?
+        = @item.item_images.each_with_index do |image, i|
+          = image_tag item_image.image_url.url, data: { index: i }, width: "100", height: '100'
+        
+          = f.fields_for :item_images do |image|
+            .js__file__group{"data-index": "#{item_image.index}"} 
+            = image.file_field :image_url, class: 'js__file'
+            %span.js__remove
+              削除
+      
+            - if @item.persisted?
+              = image.check_box :_destroy, data:{ index: item_image.index }, class: 'hidden__destroy'
+      
+              - if @item.persisted?
+                .js__file__group{"data-index": "#{@item.item_images.count}"} 
+                = file_field_tag :image_url, name: item[images_attributes][@item.item_images.count][src], class: 'js__file'
+                %span.js__remove
+                  削除

@@ -1,10 +1,11 @@
 class ItemImagesController < ApplicationController
 
   def new
+    @item_image = Item_image.new
   end
 
   def create
-    Item_image.create(image_params)
+    @item_image = Item_image.create(image_params)
   end
 
   private

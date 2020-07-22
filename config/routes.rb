@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root to: 'items#index'
 
     resources :items, except: :show
-    resources :item_images, only: [:create]
+    resources :item_images, only: [:new, :create]
 
     resources :items do
       get :search,on: :collection
