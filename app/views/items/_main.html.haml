@@ -84,9 +84,15 @@
       .Main__pickUp__box__list
         .Main__pickUp__box__list__img
           = link_to root_path,class: "top-btn" do
-            %figure.Main__pickUp__list__img__text__head
-              = link_to item_path( current_user.id ), method: :get  do
-                ■
+            - if user_signed_in? 
+              %figure.Main__pickUp__list__img__text__head
+                = link_to item_path( current_user.id ), method: :get  do
+                  ■
+            - else
+              %figure.Main__pickUp__list__img__text__head      
+                = link_to root_path do
+                  ■
+                  
             .Main__picUp__box__list__img__text__body
               %h3.Main__name
                 product
