@@ -9,9 +9,9 @@
         %br
           フリマアプリです
       .Main__top__content__img
-        = link_to root_path,class: "Main__top__content__img__list" do
+        = link_to root_path,class: "btn" do
           AppStore
-        = link_to root_path,class: "Main__top__content__img__list" do
+        = link_to root_path,class: "btn" do
           Google Play
   %section.Main__choose
     .Main__choose__content
@@ -20,21 +20,18 @@
       %ul.Main__choose__content__text
         %li.Main__choose__content__text__list
           .Main__choose__content__text__list__number
-            a
           %h3.Main__choose__content__text__list__text
             3分ですぐに出品
           %p.Main__choose__content__text__list__comment
             スマホで入力するだけで簡単に出品できる！
         %li.Main__choose__content__text__list
-          .Main__choose__content__text__list__number
-            b
+          .Main__choose__content__text__list__use
           %h3.Main__choose__content__text__list__text
             シンプルで使いやすい
           %p.Main__choose__content__text__list__comment
             手数料業界最安
         %li.Main__choose__content__text__list
-          .Main__choose__content__text__list__number
-            c
+          .Main__choose__content__text__list__buy
           %h3.Main__choose__content__text__list__text
             手数料業界最安
           %p.Main__choose__content__text__list__comment
@@ -50,34 +47,28 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
       .Main__subTitle__comment__top
-        = link_to root_path,class: "Main__subTitle__comment__top__list" do
+        = link_to root_path,class: "btn" do
           App Store
-        = link_to root_path,class: "Main__subTilte__comment__top__list" do
+        = link_to root_path,class: "btn" do
           Google Play
   %section.Main__keyFeatures
     %h2.Main__keyFeatures__content
       FURIMAの特徴
     .Main__keyFeatures__items
       %section.Main__keyFeatures__items__img
-        a
         %figure.Main__keyFeatures__items__img__pay
-          1
         %h3.Main__keyFeatures__items__img__subTitle 
           簡単に売り買いできる
         %p.Main__keyFeatures__items__img__detail 
           スマートフォンひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.Main__keyFeatures__items__img
-        b
-        %figure.Main__keyFeatures__items__img__pay
-          2
+        %figure.Main__keyFeatures__items__img__buy
         %h3.Main__keyFeatures__items__img__subTitle
           売上金は即日振込みに対応
         %p.Main__keyFeatures__items__img__detail
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
       %section.Main__keyFeatures__items__img
-        c
-        %figure.Main__keyFeatures__items__img__pay
-          3
+        %figure.Main__keyFeatures__items__img__use
         %h3.Main__keyFeatures__items__img__subTitle
           様々な支払いに対応  
         %p.Main__keyFeatures__items__img__detail
@@ -87,12 +78,35 @@
       ピックアップカテゴリー
     .Main__pickUp__box
       .Main__pickUp__box__head
-        = link_to root_path,class: "Main__pickUp__box__head__box" do
+        = link_to root_path,class: "top-btn" do
           %h3.Main__pickUp__box__head__title
             新規投稿商品
       .Main__pickUp__box__list
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
+            - if user_signed_in? 
+              %figure.Main__pickUp__list__img__text__head
+                = link_to item_path( current_user.id ), method: :get  do
+                  ■
+            - else
+              %figure.Main__pickUp__list__img__text__head      
+                = link_to root_path do
+                  ■
+                  
+            .Main__picUp__box__list__img__text__body
+              %h3.Main__name
+                product
+              .Main__details
+                %ul.Main__details__tax
+                  %li.Main__details__tax__yen
+                    1000円
+                  %li.Main__details__tax__like
+                    ★
+                    %i.Main__details__tax__like__icon
+                %p.Main__details__included
+                  (税込) 
+        .Main__pickUp__box__list__img
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body
@@ -108,23 +122,7 @@
                 %p.Main__details__included
                   (税込) 
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
-            %figure.Main__pickUp__list__img__text__head
-              ■
-            .Main__picUp__box__list__img__text__body
-              %h3.Main__name
-                product
-              .Main__details
-                %ul.Main__details__tax
-                  %li.Main__details__tax__yen
-                    1000円
-                  %li.Main__details__tax__like
-                    ★
-                    %i.Main__details__tax__like__icon
-                %p.Main__details__included
-                  (税込) 
-        .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body
@@ -140,7 +138,7 @@
                   %p.Main__name__tax__included
                     (税込)
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body
@@ -160,12 +158,12 @@
       ピックアップブランド
     .Main__pickUp__box
       .Main__pickUp__box__head
-        = link_to root_path,class: "Main__pickUp__box__head__box" do
+        = link_to root_path,class: "top-btn" do
           %h3.Main__pickUp__box__head__title
             アーカイバ
       .Main__pickUp__box__list         
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body
@@ -181,7 +179,7 @@
                 %p.Main__details__included
                   (税込) 
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body
@@ -197,7 +195,7 @@
                 %p.Main__details__included
                   (税込)  
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body
@@ -213,7 +211,7 @@
                 %p.Main__details__included
                   (税込)  
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "Main__pickUp__box__list__img__text" do
+          = link_to root_path,class: "top-btn" do
             %figure.Main__pickUp__list__img__text__head
               ■
             .Main__picUp__box__list__img__text__body

@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '0bb0184161acdfb59c08fa79930368f12b70e2667ef10fd11aad8ffedbe0fe1abd09abe9eb43a1d65c3bf2dcf471db1c1a3487ccb04cfb997d1cec208187a32c'
+  # config.secret_key = 'f76861501b34b3542e0aa14fc7125af0b076f1fb50a3f740e81b1a84cc3ce058c23436be33ac5409fbe193e99c22568b04ea63c5663eb0afc996545b1cdc2911'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
+<<<<<<< HEAD
   # config.pepper = '15c510ba40edfdc9b44ccb032f3ed2c0627a769857fb0441a2ea6d29793c0c90604fd5489b4ee77a5da63a4397808ec002e82b7ee65cfbeb064f137c7915fd71'
+=======
+  # config.pepper = '42843de7812a03b0431a7566280755e8db5df00402a5c54aaeebbe6da786b7199a43a0ca02e765be46879fd97edb4fb6ec2598f3a463b0b7be643511c921fbb7'
+>>>>>>> c9c3ab5f5af46ad1f253c97f65857b5726d43ce6
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -178,7 +182,11 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
+<<<<<<< HEAD
   config.password_length = 6..128
+=======
+  config.password_length = 7..128
+>>>>>>> c9c3ab5f5af46ad1f253c97f65857b5726d43ce6
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -224,7 +232,11 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
+<<<<<<< HEAD
   config.reset_password_within = 6.hours
+=======
+  config.reset_password_within = 7.hours
+>>>>>>> c9c3ab5f5af46ad1f253c97f65857b5726d43ce6
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.

@@ -14,6 +14,7 @@ body {
 
 /*ヘッダーの形成*/
 .Header {
+  border-bottom: 1px solid gray;
   padding: 0 60px;
   &__main {  
     max-width: 1040px;
@@ -29,6 +30,7 @@ body {
         padding-bottom: 10px;
         margin-right: 30px;
         border-radius: 4px;
+        
       }
       &__title {
         position: relative;
@@ -51,13 +53,23 @@ body {
             height: 36px;
             padding: 0 0 0 5px;
           }
-          &__btn {
-            width: 36px;
-            border: 0;
-            cursor: pointer;
-            font-size: 8px;
+          &__img{
             background-color: #3CCACE;
-            
+            height: 30px;
+            width: 30px;
+            padding: 5px 0 0 0;
+            margin: 0 0 0 2px;
+            background-image: image-url('icon-search.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+            &__btn {
+              border: 0;
+              height: 30px;
+              width: 30px;
+              cursor: pointer;
+              opacity:0;
+            } 
           }
         }
       }
@@ -65,7 +77,6 @@ body {
     &__sub {
       font-size: 14px;
       display: flex;
-      margin-bottom: 10px;
       &__top {
         position: relative;
         display: flex;
@@ -95,11 +106,46 @@ body {
     }
   }
 }
+.image__logo{
+  width: 140px;
+  margin: 5px 0 0 0;
+}
+.Header__main__sub__top__content__login {
+  margin: 10px 0 0 0;
+  text-decoration: none;
+  color:red;
+}
+.Header__main__sub__top__content__new {
+  margin: 10px 0 0 10px;
+  text-decoration: none;
+  color: red;
+}
+
+.top-btn{
+  text-decoration:none;
+  }
+  
+.top-btn:link {
+  color: black;
+  }
+  
+.top-btn:visited {
+  color: black;
+  }
+  
+.top-btn:hover {
+  color:#3CCACE;
+  text-decoration:underline;
+  }
+  
+.top-btn:active {
+  color:#33CC00;
+  }
 
 /*メインの形成*/
 .Main{
   &__top{
-    background-color: gray;
+    background-image: image-url('bg-mainVisual-pict_pc');
     height: 560px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -137,7 +183,7 @@ body {
   }
   &__choose{
     &__content{
-      background-color: greenyellow;
+      background-color: #fff;
       padding: 60px 20px;
       &__list{
         text-align: center;
@@ -161,15 +207,40 @@ body {
           display: flex;
           flex-direction: column;
           align-items: center;
+          &__number {
+            background-image: image-url('pict-reason-01');
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+          }
+          &__use {
+            background-image: image-url( 'pict-reason-02');
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+          }
+          &__buy {
+            background-image: image-url( 'pict-reason-03');
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+          }
         }
       }
     }
   }
   &__subTitle{
-    background-color: gray;
-    background-position: bottom right;
-    height: 400px;
+    background-image: image-url('bg-topMiddleDl-pict');
+    height: 500px;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
     display: flex;
     align-items: center;
     &__comment{
@@ -198,7 +269,7 @@ body {
   }
   &__keyFeatures{
     padding: 60px 100px;
-    background-color: greenyellow;
+    background-color: #fff;
     &__content{
       font-size:27px;
       text-align: center;
@@ -223,6 +294,34 @@ body {
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
+          background-image: image-url('icon-01');
+          width: 200px;
+          height: 400px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &__buy{
+          width: 70%;
+          margin: 0 auto;
+          line-height: 120px;
+          background-image: image-url('icon-02');
+          width: 200px;
+          height: 400px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &__use{
+          width: 70%;
+          margin: 0 auto;
+          line-height: 120px;
+          background-image: image-url('icon-03');
+          width: 200px;
+          height: 400px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
         }
         &__subTitle{
           margin: 38px 0 10px;
@@ -329,9 +428,12 @@ body {
 /*バーナー*/
 .AppBanner{
   padding: 100px 40px;
-  position: relative;
+  background-image: image-url('bg-appBanner-pict');
+  height: 300px;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  position: relative;
   &__inner{
     color: #333;
     text-align: center;

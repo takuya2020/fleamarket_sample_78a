@@ -35,6 +35,9 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+  end
+
   def search
     if params[:keyword].present?
       @Items = Item.where('item LIKE ?', "%#{params[:keywoed]}%")
@@ -52,4 +55,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+end
+
+
+
+
+private
+def item_params
+  params.require(:item).permit(:nickname).merge(user_id: current_user.id)
 end
