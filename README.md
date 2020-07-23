@@ -99,6 +99,9 @@ Things you may want to cover:
 |trading_status|integer|null: false|
 |completed_at|datetime|
 |brand|string|
+|shipping_charges|integer|null: false|
+|days_until_delivery|integer|null: false|
+|shipping_area|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -134,6 +137,3 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
-
-
-

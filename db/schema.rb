@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 2020_07_19_062102) do
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "items_id", null: false
+    t.bigint "item_id", null: false
     t.string "image_url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["items_id"], name: "index_item_images_on_items_id"
+    t.index ["item_id"], name: "index_item_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_07_19_062102) do
     t.text "text", null: false
     t.integer "condition", null: false
     t.integer "price", null: false
-    t.integer "rading_status", null: false
     t.datetime "completed_at"
     t.string "brand"
     t.integer "shipping_charges", null: false
@@ -67,22 +66,6 @@ ActiveRecord::Schema.define(version: 2020_07_19_062102) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_items_on_category_id"
-  end
-
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category", null: false
-    t.string "deliver_leadteme", null: false
-    t.string "deliver_person", null: false
-    t.string "deliver_way", null: false
-    t.string "fresh_status", null: false
-    t.string "form_area", null: false
-    t.integer "price", null: false
-    t.string "sell_status", null: false
-    t.integer "size_id", null: false
-    t.string "text", null: false
-    t.string "title", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
