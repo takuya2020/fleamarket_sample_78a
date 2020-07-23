@@ -126,11 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-<<<<<<< HEAD
-  # config.pepper = '15c510ba40edfdc9b44ccb032f3ed2c0627a769857fb0441a2ea6d29793c0c90604fd5489b4ee77a5da63a4397808ec002e82b7ee65cfbeb064f137c7915fd71'
-=======
   # config.pepper = '42843de7812a03b0431a7566280755e8db5df00402a5c54aaeebbe6da786b7199a43a0ca02e765be46879fd97edb4fb6ec2598f3a463b0b7be643511c921fbb7'
->>>>>>> c9c3ab5f5af46ad1f253c97f65857b5726d43ce6
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -182,11 +178,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-<<<<<<< HEAD
-  config.password_length = 6..128
-=======
   config.password_length = 7..128
->>>>>>> c9c3ab5f5af46ad1f253c97f65857b5726d43ce6
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -232,11 +224,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-<<<<<<< HEAD
-  config.reset_password_within = 6.hours
-=======
   config.reset_password_within = 7.hours
->>>>>>> c9c3ab5f5af46ad1f253c97f65857b5726d43ce6
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
