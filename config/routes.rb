@@ -13,9 +13,8 @@ Rails.application.routes.draw do
     root to: 'items#index'
     resources :items, only: :show
 
-    
-    resources :users, only: :show
-    resources :products, only:[:index]
+    resources :items, except: :show
+    resources :item_images, only: [:new, :create]
 
 
     resources :items do

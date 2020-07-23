@@ -68,22 +68,6 @@ ActiveRecord::Schema.define(version: 2020_07_21_101749) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category", null: false
-    t.string "deliver_leadteme", null: false
-    t.string "deliver_person", null: false
-    t.string "deliver_way", null: false
-    t.string "fresh_status", null: false
-    t.string "form_area", null: false
-    t.integer "price", null: false
-    t.string "sell_status", null: false
-    t.integer "size_id", null: false
-    t.string "text", null: false
-    t.string "title", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "birthyear", null: false
     t.integer "birthmonth", null: false
