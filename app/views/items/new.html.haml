@@ -11,7 +11,7 @@
     .inputform__body
       .inputform__body__title
       #inputform__body__upload
-        = form_with model: @item do |form|
+        = form_with model: @item, local: true do |form|
           = form.fields_for :item_images do |j|
             = label :image_url, "画像をアップロード", for: "image__input__btn__file", class: "image__input__btn"
             .file_fields
