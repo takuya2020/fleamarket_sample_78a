@@ -11,14 +11,10 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html 
     root to: 'items#index'
-    resources :items, only: :show
     resources :users, only: :show
-    resources :items, only: :index
     
-
     resources :items, except: :show
     resources :item_images, only: [:new, :create]
-
 
     resources :items do
       get :search,on: :collection
