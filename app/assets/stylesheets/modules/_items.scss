@@ -365,25 +365,20 @@ body {
         display: flex;
         justify-content: space-around; 
         &__img{
-          width: 220px;
+          width: 400px;
           display: inline-block;
           float: left;
           &__text {
-            width:150px;
+            width:400px;
             background-color: #fff;
-            display: inline-block;
-            &__head {
-              width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
-            }
+            display: flex;
             &__body{
               background-color: white;
-              color: #333;
+              color: black;
               padding: 16px;  
+              display: block;
+              margin: 0 20px 0 0;
+              border: solid 1px;
               .Main__name{
                 overflow: hidden;
                 line-height: 1.5;
