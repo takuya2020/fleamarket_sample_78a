@@ -14,11 +14,17 @@ class ItemImagesController < ApplicationController
   end
 
   def update
-    @item_image.update(image_params)
+    if @item_image.update(image_params)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @item_image.destroy
+    if @item_image.destroy
+    else
+      render :edit
+    end
   end
 
   def show

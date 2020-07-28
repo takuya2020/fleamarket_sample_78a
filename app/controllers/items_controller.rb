@@ -19,24 +19,21 @@ class ItemsController < ApplicationController
     end
   end
 
-  def pay
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    charge = Payjp::Charge.create(
-    amount: @item.price,
-    card: params['payjp-token'],
-    currency: 'jpy'
-    )
-  end
-
   def edit
   end
 
   def update
-    @item.update(item_params)
+    if @item.update(item_params)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @item.destroy
+    if  @item.destroy
+    else
+      render :edit
+    end
   end
 
   def show
