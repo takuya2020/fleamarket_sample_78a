@@ -1,4 +1,6 @@
 class ItemImagesController < ApplicationController
+  before_action :set_item_image only: [:edit, :update, :destroy, :show]
+
 
   def new
     @item_image = Item_image.new
@@ -9,21 +11,17 @@ class ItemImagesController < ApplicationController
   end
 
   def edit
-    @item_image = Item_image.find(params[:id])
   end
 
   def update
-    @item_image = Item_image.find(params[:id])
     @item_image.update(image_params)
   end
 
   def destroy
-    @item_image = Item_image.find(params[:id])
     @item_image.destroy
   end
 
   def show
-    @item_image = Item_image.find(params[:id])
   end
 
   private
@@ -31,4 +29,7 @@ class ItemImagesController < ApplicationController
     params.require(:item_images).permit(:image_url)
   end
 
+  def set_item_image
+    @item_image = Item_image.find(params[:id])
+  end
 end
