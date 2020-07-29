@@ -1,4 +1,7 @@
 class ItemPurchasesController < ApplicationController
+
+#　下記のコメントアウトは商品購入機能の実装時の為に残している。
+
  # before_action :set_card, only: [:pay]
  # before_action :set_item, only: [:pay]
 
