@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, format: { with: VALID_EMAIL_REGEX }                             
   has_one :profile, dependent: :destroy
   has_one :address, dependent: :destroy
+  has_one :item_purchase 
   has_many :items
   has_many :cards, dependent: :destroy
 end

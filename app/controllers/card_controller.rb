@@ -1,8 +1,7 @@
 class CardController < ApplicationController
   before_action :set_card
 
-  def index
-  end
+
   
   def new
     card = Card.where(user_id: current_user.id)

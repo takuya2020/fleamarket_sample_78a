@@ -96,7 +96,9 @@
                     %li.Main__details__tax__yen
                       = item.price
                     %li.Main__details__tax__like
-                      ★
+                      - if @item_purchase.present?
+                        .product-transaction-btn
+                          SOLD OUT
                       %i.Main__details__tax__like__icon
                   %p.Main__details__included
                     (税込) 

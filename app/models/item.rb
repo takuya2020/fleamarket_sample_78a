@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :category, optional: true
   has_many :item_images, dependent: :destroy
-  has_one :item_purchase 
+  has_many :item_purchase 
 
   accepts_nested_attributes_for :item_images, allow_destroy: true
 

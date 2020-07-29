@@ -31,14 +31,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if  @item.destroy
-      render :edit unless @item.update(item_params)
-    else
-      render :edit
-    end
   end
 
   def show
+    @item_purchase = ItemPurchase.find_by(item_id: params[:id])
   end
 
   def search
