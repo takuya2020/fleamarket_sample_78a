@@ -1,0 +1,15 @@
+.transaction-done
+  .transaction-done__content
+    .transaction-done__text
+      購入が完了しました！
+    .transaction-done__image
+    .transaction-done__title
+      = @item.name
+    .transaction-done__price
+      .transaction-done__price--text
+        = @item.price
+      .transaction-done__price--info
+        (送料込み)
+      %h1.icon
+        = link_to root_path, class: "icon__img" do
+          = image_tag 'logo.png', alt: 'FURIMA logo', class: 'image__logo'

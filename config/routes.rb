@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     root to: 'items#index'
     resources :users, only: :show
     
-    resources :items, except: :show
-    resources :item_images, only: [:new, :create]
+    resources :items
+    resources :item_images
 
     resources :items do
       get :search,on: :collection
@@ -25,6 +25,14 @@ Rails.application.routes.draw do
       post 'show', to: 'card#show'
         post 'pay', to: 'card#pay'
           post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :item_purchases, only: [:show] do
+    collection do
+      get "pay_index", to: 'item_purchases#pay_index'
+      post 'pay', to: 'item_purchases#pay'
+      get 'done', to: 'item_purchases#done'
     end
   end
 

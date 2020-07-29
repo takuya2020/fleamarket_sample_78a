@@ -25,5 +25,7 @@
           %input{ type: "hidden", name: "card_id", value: "" }
           %button.pay-btn 
             削除する
+        = link_to user_path( current_user.id ),class: 'details-btn' do
+          マイページ
 = render 'items/footer'
 = render 'items/a'
