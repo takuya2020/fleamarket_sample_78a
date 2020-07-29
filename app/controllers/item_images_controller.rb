@@ -15,6 +15,7 @@ class ItemImagesController < ApplicationController
 
   def update
     if @item_image.update(image_params)
+      render :edit unless @item_image.update(image_params)
     else
       render :edit
     end
@@ -22,6 +23,7 @@ class ItemImagesController < ApplicationController
 
   def destroy
     if @item_image.destroy
+      render :edit unless @item_image.update(image_params)
     else
       render :edit
     end

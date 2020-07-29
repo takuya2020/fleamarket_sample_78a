@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
+      render :edit unless @item.update(item_params)
     else
       render :edit
     end
@@ -31,6 +32,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if  @item.destroy
+      render :edit unless @item.update(item_params)
     else
       render :edit
     end
