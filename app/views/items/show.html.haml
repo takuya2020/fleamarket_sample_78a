@@ -138,10 +138,10 @@
   .product-show__transaction
     .product-show__transaction-box
       -# 商品購入済みであればSOLD OUT
-      - if @item_id.present?
+      - if @item_purchase.present?
         .product-transaction-btn
           SOLD OUT
-      - else
-        = link_to "購入画面に進む", pay_index_path, class: "product-transaction-btn"                   
+      - else user_signed_in? 
+        = link_to "購入画面に進む", item_item_purchase_index_path(@item.id), class: "product-transaction-btn"                     
 = render 'items/footer'
 = render 'items/a'
