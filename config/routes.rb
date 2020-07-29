@@ -28,13 +28,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :item_purchases, only: [:show] do
-    collection do
+  # 下記のコメントアウトは、商品購入機能の為に残している。
+ # resources :item_purchase, only: [:pay_index] do
+  #  collection do
       get "pay_index", to: 'item_purchases#pay_index'
-      post 'pay', to: 'item_purchases#pay'
-      get 'done', to: 'item_purchases#done'
-    end
-  end
+  #    post 'pay', to: 'item_purchases#pay'
+  #    get 'done', to: 'item_purchases#done'
+  #  end
+  #end
 
 end
   
