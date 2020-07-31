@@ -360,49 +360,43 @@ body {
         }
       }
       &__list{
-        width: 0px;
         margin: 26px auto;
-        display: flex;
-        justify-content: space-around; 
+        justify-content: center;
+        overflow-x:scroll;
+        width: 80%;
         &__img{
-          width: 220px;
+          overflow-x:scroll;
           display: inline-block;
-          float: left;
           &__text {
-            width:150px;
-            background-color: #fff;
-            display: inline-block;
-            &__head {
-              width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
-            }
+            margin: 0 140px;
+            display: flex;
+            overflow-x:scroll;
             &__body{
+              overflow-x:scroll;
+              height: 200px;
+              width: 200px;
               background-color: white;
-              color: #333;
+              color: black;
               padding: 16px;  
+              display: block;
+              margin: 0 20px 0 0;
+              border: solid 1px;
               .Main__name{
                 overflow: hidden;
                 line-height: 1.5;
                 font-size: 16px;
                 text-align: left;
+                padding: 20px 0 0 0;
               }
               .Main__details{
                 font-size: 16px;
                 &__tax{
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
                   &__yen {  
                     display: inline-block;
                     font-size: inherit;
                     text-rendering: auto;
                   }
                   &__like { 
-                    display: inline-block;
                     font-size: inherit;
                     text-rendering: auto;           
                     &__icon{
@@ -505,3 +499,9 @@ body {
     font-size: 14px;
   }  
 }   
+
+.product-transaction-btn{
+  background-color: red;
+  color: #fff;
+  text-align: center;
+}

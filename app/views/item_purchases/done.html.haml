@@ -1,0 +1,15 @@
+.transaction-done
+  .transaction-done__content
+    .transaction-done__text
+      購入が完了しました！
+    .transaction-done__image
+      = image_tag @item.item_images[0].image_url.url
+    .transaction-done__title
+    .transaction-done__price
+      = @item.price
+      .transaction-done__price--text
+      .transaction-done__price--info
+        (送料込み)
+      %h1.icon
+        = link_to root_path, class: "icon__img" do
+          完了

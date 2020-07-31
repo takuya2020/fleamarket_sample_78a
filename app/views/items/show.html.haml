@@ -34,22 +34,21 @@
           .ItemDetails__show__content__top__itemBox__body
             %ul.ItemDetails__show__content__top__itemBox__body__item
               %li.ItemDetails__show__content__top__itemBox__body__item__img
-                img
+                = image_tag @item.item_images[0].image_url.url
               %il.ItemDetails__show__content__top__itemBox__body__item__list
                 %ul.ItemDetails__show__content__top__itemBox__body__item__list__items
                   %li.ItemDetails__show__content__top__itemBox__body__item__list__items__img
-                    img
+                 
                   %li.ItemDetails__show__content__top__itemBox__body__item__list__items__img
-                    img
+                 
           .ItemDetails__show__content__top__itemBox__price
-            ￥1,000
+            = @item.price
             .ItemDetails__show__content__top__itemBox__price__detail
               .ItemDetails__show__content__top__itemBox__price__detail__tax
                 （税込）
               .ItemDetails__show__content__top__itemBox__price__detail__postage
                 送料込み
           .ItemDetails__show__content__top__itemBox__item
-            eee
           .ItemDetails__show__content__top__itemBox__table
             %table.ItemDetails__show__content__top__itemBox__table__text
               %tbody.ItemDetails__show__content__top__itemBox__table__text__tbody
@@ -57,7 +56,7 @@
                   %th.ItemDetails__show__content__top__itemBox__table__text__tbody__buyUser__nameList
                     出品者
                   %td.ItemDetails__show__content__top__itemBox__table__text__tbody__buyUser__name 
-                    ss 
+                    = @item.user.nickname
                 %tr.ItemDetails__show__content__top__itemBox__table__text__tbody__content
                   %th.ItemDetails__show__content__top__itemBox__table__text__tbody__content__nameList
                     カテゴリー
@@ -128,6 +127,21 @@
                     %li.ItemDetails__show__content__relateItems__list__product__box__body__detail__foot__like
                       ★
                   %p.ItemDetails__show__content__relateItems__list__product__box__body__detail__tax
-                    （税込）                    
+                    （税込） 
+-# 出品者ならば編集と削除を表示
+- if user_signed_in? && (current_user.id == @item.user_id)
+  = link_to '編集', edit_item_path( @item.id), method: :get
+  = link_to '削除', item_path(@item.id), method: :delete
+-# 商品出品者であれば表示させない
+- if user_signed_in? && (current_user.id == @item.user_id)
+- else
+  .product-show__transaction
+    .product-show__transaction-box
+      -# 商品購入済みであればSOLD OUT
+      - if @item_purchase.present?
+        .product-transaction-btn
+          SOLD OUT
+      - else user_signed_in? 
+        = link_to "購入画面に進む", item_item_purchase_index_path(@item.id), class: "product-transaction-btn"                     
 = render 'items/footer'
 = render 'items/a'

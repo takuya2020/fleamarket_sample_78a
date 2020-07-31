@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     root to: 'items#index'
     resources :users, only: :show
     
-    resources :items, except: :show
-    resources :item_images, only: [:new, :create]
+    resources :items
+    resources :item_images
 
     resources :items do
       get :search,on: :collection
@@ -25,6 +25,17 @@ Rails.application.routes.draw do
       post 'show', to: 'card#show'
         post 'pay', to: 'card#pay'
           post 'delete', to: 'card#delete'
+    end
+  end
+
+  # 下記のコメントアウトは、商品購入機能の為に残している。
+  resources :items do
+    resources :item_purchase, only: [:index] do
+      collection do
+        get "index", to: 'item_purchases#index'
+          post 'pay', to: 'item_purchases#pay'
+            get 'done', to: 'item_purchases#done'
+      end
     end
   end
 

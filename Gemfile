@@ -80,3 +80,7 @@ gem 'devise-i18n-views'
 gem 'payjp'
 
 gem 'jquery-rails'
+
+gem 'rails-i18n'
+
+gem 'active_hash'
