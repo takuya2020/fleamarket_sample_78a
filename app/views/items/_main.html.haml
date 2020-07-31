@@ -86,7 +86,8 @@
           %figure.Main__pickUp__box__list__img__text
             - @items.each do |item|
               = link_to item_path( item.id ),class: 'Main__pickUp__box__list__img__text__body' do
-                ■
+                .img
+                  = image_tag item.item_images[0].image_url.url, :size =>'75x75' 
                 %h3.Main__name
                   = item.name
                   .item__id
@@ -96,7 +97,7 @@
                     %li.Main__details__tax__yen
                       = item.price
                     %li.Main__details__tax__like
-                      - if @item_purchase.present?
+                      - if item.item_purchase.present?
                         .product-transaction-btn
                           SOLD OUT
                       %i.Main__details__tax__like__icon
@@ -110,70 +111,29 @@
         = link_to root_path,class: "top-btn" do
           %h3.Main__pickUp__box__head__title
             アーカイバ
-      .Main__pickUp__box__list         
+      .Main__pickUp__box__list
         .Main__pickUp__box__list__img
-          = link_to root_path,class: "top-btn" do
-            %figure.Main__pickUp__list__img__text__head
-              ■
-            .Main__picUp__box__list__img__text__body
-              %h3.Main__name
-                product
-              .Main__details
-                %ul.Main__details__tax
-                  %li.Main__details__tax__yen
-                    1000円
-                  %li.Main__details__tax__like
-                    ★
-                    %i.Main__details__tax__like__icon
-                %p.Main__details__included
-                  (税込) 
-        .Main__pickUp__box__list__img
-          = link_to root_path,class: "top-btn" do
-            %figure.Main__pickUp__list__img__text__head
-              ■
-            .Main__picUp__box__list__img__text__body
-              %h3.Main__name
-                product
-              .Main__details
-                %ul.Main__details__tax
-                  %li.Main__details__tax__yen
-                    1000円
-                  %li.Main__details__tax__like
-                    ★
-                    %i.Main__details__tax__like__icon
-                %p.Main__details__included
-                  (税込)  
-        .Main__pickUp__box__list__img
-          = link_to root_path,class: "top-btn" do
-            %figure.Main__pickUp__list__img__text__head
-              ■
-            .Main__picUp__box__list__img__text__body
-              %h3.Main__name
-                product
-              .Main__details
-                %ul.Main__details__tax
-                  %li.Main__details__tax__yen
-                    1000円
-                  %li.Main__details__tax__like
-                    ★
-                    %i.Main__details__tax__like__icon
-                %p.Main__details__included
-                  (税込)  
-        .Main__pickUp__box__list__img
-          = link_to root_path,class: "top-btn" do
-            %figure.Main__pickUp__list__img__text__head
-              ■
-            .Main__picUp__box__list__img__text__body
-              %h3.Main__name
-                product
-              .Main__details
-                %ul.Main__details__tax
-                  %li.Main__details__tax__yen
-                    1000円
-                  %li.Main__details__tax__like
-                    ★
-                    %i.Main__details__tax__like__icon
-                %p.Main__details__included
-                  (税込)     
+          %figure.Main__pickUp__box__list__img__text
+            - @item_lodes.each do |item|
+              = link_to item_path( item.id ),class: 'Main__pickUp__box__list__img__text__body' do
+                .img
+                  = image_tag item.item_images[0].image_url.url, :size =>'75x75' 
+                %h3.Main__name
+                  = item.name
+                  .item__id
+                    = item.user.nickname
+                .Main__details
+                  %ul.Main__details__tax
+                    %li.Main__details__tax__yen
+                      = item.price
+                    %li.Main__details__tax__like
+                      - if item.item_purchase.present?
+                        .product-transaction-btn
+                          SOLD OUT
+                      %i.Main__details__tax__like__icon
+                  %p.Main__details__included
+                    (税込) 
+ 
+
 
   

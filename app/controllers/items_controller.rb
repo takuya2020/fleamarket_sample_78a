@@ -2,7 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
   before_action :set_item, only: [:edit, :update, :destroy, :show]
   def index
-    @items = Item.includes(:item_images).order('created_at DESC').limit(4)
+    @items = Item.includes(:item_images).order('created_at DESC')
+    @item_lodes = Item.includes(:item_images)
+    @item_purchase = ItemPurchase.find_by(item_id: params[:id])
   end
 
   def new
