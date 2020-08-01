@@ -22,7 +22,7 @@
             = link_to destroy_user_session_path, method: :delete ,class: 'top-btn'do
               ログアウト
           %li.Header__main__sub__top__content__new
-            =link_to new_item_path(current_user.id),class: 'top-btn' do
+            =link_to user_path(current_user.id),class: 'top-btn' do
               = current_user.nickname  
       - else
         %ul.Header__main__sub__content
