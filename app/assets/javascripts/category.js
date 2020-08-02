@@ -53,7 +53,6 @@ $(function(){
     });
     $(document).on('change','#child__category',function(){
       var childId = document.getElementById('child__category').value;
-      console.log(childId);
 
       if(childId != "" && childId != 46 && childId != 74 && childId != 134 && childId != 142 && childId != 147 && childId != 150 && childId != 158){
         $.ajax({
@@ -63,7 +62,6 @@ $(function(){
           dataType: 'json'
         })
         .done(function(grandchildren){
-            console.log(grandchildren)
 
           $('#grandchildren_wrapper').remove();
           var insertHTML = '';
