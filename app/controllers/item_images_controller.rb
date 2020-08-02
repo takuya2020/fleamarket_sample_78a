@@ -1,5 +1,5 @@
 class ItemImagesController < ApplicationController
-  before_action :set_item_image only: [:edit, :update, :destroy, :show]
+  before_action :set_item_image, only: [:edit, :update, :destroy, :show]
 
 
   def new
